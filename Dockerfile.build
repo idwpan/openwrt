@@ -1,0 +1,7 @@
+FROM gcr.io/adroit-lantern-246102/idwpan/openwrt-download:latest
+
+WORKDIR /workspace/openwrt
+
+RUN make -j32 -O download
+
+CMD ['/bin/bash']

@@ -1,0 +1,11 @@
+# download
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '--tag=gcr.io/$PROJECT_ID/idwpan/openwrt-download:latest', '--tag=gcr.io/$PROJECT_ID/idwpan/openwrt-download:$SHORT_SHA', '-f', 'Dockerfile.download', '.']
+
+timeout: 7200s
+
+images: ['gcr.io/$PROJECT_ID/idwpan/openwrt-download:$SHORT_SHA', 'gcr.io/$PROJECT_ID/idwpan/openwrt-download:latest']
+
+options:
+  machineType: 'N1_HIGHCPU_32'

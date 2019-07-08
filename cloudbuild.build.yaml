@@ -2,7 +2,8 @@
 
 steps:
 - name: 'gcr.io/$PROJECT_ID/idwpan/openwrt-download:latest'
-  args: ['make', 'defconfig', '&&', 'make', '-j32', '-O']
+  args: ['make', '-j32', 'V=sc', '-d', '-O']
+  dir: '/workspace/openwrt'
 timeout: 7200s
 options:
   machineType: 'N1_HIGHCPU_32'

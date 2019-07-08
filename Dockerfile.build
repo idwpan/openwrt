@@ -1,5 +1,7 @@
 FROM gcr.io/cypheruswrt/idwpan/openwrt-download:latest
 
+USER builder
+
 WORKDIR /workspace/openwrt
 
 RUN make -j$(nproc) -d V=sc

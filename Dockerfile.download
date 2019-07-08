@@ -1,5 +1,7 @@
 FROM gcr.io/cypheruswrt/idwpan/openwrt-init:latest
 
+USER builder
+
 RUN git clone --single-branch --branch cypheruswrt https://github.com/idwpan/openwrt.git /workspace/openwrt
 WORKDIR /workspace/openwrt
 RUN cat "/workspace/openwrt/cypheruswrt-dev/config.seed" >> /workspace/openwrt/.config

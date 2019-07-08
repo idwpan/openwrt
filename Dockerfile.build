@@ -1,4 +1,4 @@
-FROM gcr.io/adroit-lantern-246102/idwpan/openwrt-download:latest
+FROM gcr.io/cypheruswrt/idwpan/openwrt-download:latest
 
 WORKDIR /workspace/openwrt
 

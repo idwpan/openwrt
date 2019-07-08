@@ -1,4 +1,4 @@
-FROM gcr.io/adroit-lantern-246102/idwpan/openwrt-init:latest
+FROM gcr.io/cypheruswrt/idwpan/openwrt-init:latest
 
 RUN git clone --single-branch --branch cypheruswrt https://github.com/idwpan/openwrt.git /workspace/openwrt
 WORKDIR /workspace/openwrt

@@ -11,6 +11,6 @@ RUN /workspace/openwrt/scripts/feeds install -a
 
 RUN make defconfig
 
-RUN make -j$(nproc) download
+RUN make -j$(nproc) -d V=s download
 
 CMD ['/bin/bash']

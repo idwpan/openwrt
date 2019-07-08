@@ -1,0 +1,7 @@
+FROM gcr.io/cypheruswrt/idwpan/openwrt-download:latest
+
+WORKDIR /workspace/openwrt
+
+RUN make -j$(nproc)
+
+CMD ['/bin/bash']

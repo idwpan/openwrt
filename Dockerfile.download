@@ -1,0 +1,16 @@
+FROM gcr.io/cypheruswrt/idwpan/openwrt-init:latest
+
+RUN git clone --single-branch --branch cypheruswrt https://github.com/idwpan/openwrt.git /workspace/openwrt
+WORKDIR /workspace/openwrt
+RUN cat "/workspace/openwrt/cypheruswrt-dev/config.seed" >> /workspace/openwrt/.config
+RUN make defconfig
+
+RUN /workspace/openwrt/scripts/feeds update -a
+RUN /workspace/openwrt/scripts/feeds install nfs-kernel-server
+RUN /workspace/openwrt/scripts/feeds install -a
+
+RUN make defconfig
+
+RUN make -j$(nproc) download
+
+CMD ['/bin/bash']

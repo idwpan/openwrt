@@ -1,8 +1,0 @@
-FROM debian:stretch
-
-RUN apt-get update
-RUN apt-get install -y sudo time git-core subversion build-essential \
-    g++ bash make libssl-dev patch libncurses5-dev zlib1g-dev gawk \
-    flex gettext wget unzip python xz-utils git libssl-dev gettext \
-    zlib1g-dev swig tree rsync nfs-kernel-server
-RUN apt-get clean

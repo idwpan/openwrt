@@ -5,12 +5,12 @@ RUN apt-get install -y sudo time git-core subversion build-essential \
     g++ bash make libssl-dev patch libncurses5-dev zlib1g-dev gawk \
     flex gettext wget unzip python xz-utils git libssl-dev gettext \
     swig tree rsync nfs-kernel-server protobuf-c-compiler libprotobuf-c-dev \
-    libprotoc-dev libgettextpo-dev gettext gettext-base
+    libprotoc-dev libgettextpo-dev gettext-base libgnutls*
 RUN apt-get clean
 
-RUN useradd -m builder && \
-    usermod -aG sudo builder  && \
-    mkdir /workspace && \
-    chown -R builder:builder /workspace
+RUN useradd -m builder
+RUN usermod -aG sudo builder
+RUN mkdir /workspace
+RUN chown -R builder:builder /workspace
 
 USER builder

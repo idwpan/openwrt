@@ -4,6 +4,8 @@ USER builder
 
 WORKDIR /workspace/openwrt
 
+RUN make -j$(nproc) -d V=sc toolchain/install
+
 RUN make -j$(nproc) -d V=sc
 
 CMD ['/bin/bash']
